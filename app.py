@@ -8,13 +8,14 @@ addtocart = driver.find_element_by_class_name("btn-lg")
 
 addtocart.click()
 
-#gotocart = driver.find_element_by_class_name("c-button-secondary")
-
-#refresh the page to get rid of the JS popup kekw
+#refresh the page to get rid of the JS popup kekw?it does still have the item in the cart
 driver.refresh()
 
-#cart is a link and not a button..
-#maybe try getting a new page? does it retain that there is something in the cart?
+#click the go to cart link on the main product page
+gotocart = driver.find_element_by_xpath('/html/body/div[2]/div/div[1]/header/div[1]/div/div[3]/div[1]/div/div/div/div/a')
 
-cart = webdriver.Chrome('C:\chromedriver_win32\chromedriver')
-cart.get("https://www.bestbuy.com/cart")
+gotocart.click()
+
+checkout = driver.find_element_by_xpath('/html/body/div[1]/main/div/div[2]/div[1]/div/div[1]/div[1]/section[2]/div/div/div[3]/div/div[1]/button')
+
+checkout.click()
